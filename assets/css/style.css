@@ -1043,6 +1043,7 @@ a:hover {
 
 .portfolio-details .portfolio-description {
   padding-top: 30px;
+  text-align: start;
 }
 
 .portfolio-details .portfolio-description h2 {
