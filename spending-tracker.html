@@ -169,70 +169,95 @@
 
         <div class="row">
 
+
+          <h2>The algorithm</h2>
+          <p>Once text is stripped from a bank statement, the data looks like this when printed in a console:</p>
+          <img src="assets/img/spendingtracker/strippedtextpage1.png" alt="" style="width: 60%; ">
+          <p>Hence, the goal is to organise the data into a database of key-value pairs. Since the data is untidy, we do not know what any of the data means. 
+          Therefore, I use a data mining framework called CRISP-DM for structured data processing.</p>
+          <p>The purpose of this is to sanitise the data, deal with missing values using appropriate imputation strategies and handling data types. </p>
+          <p>Simultaneously, this involves identifying patterns in the stripped text to identify what the data means and organise into a database. 
+          The app uses several regular expressions (regex) to identify the patterns such as:</p>
+
+          <ul>
+            <li>Lines that begin with a date value: "<code>^[0-9]{2}\s[a-zA-Z]{3}\s[0-9]{2}\s[()a-zA-Z0-9_-].*$</code>" </li>
+            <li>Lines that end with 1 money value: "<code>[,()a-zA-Z0-9_-].*\s[0-9]{1}[0-9]*\.[0-9]{2}$</code>"</li>
+            <li>Lines that end with 2 money values: "<code>[,()a-zA-Z0-9_-].*\s[0-9]{1}[0-9]*\.[0-9]{2}\s[0-9]{1}[0-9]*\.[0-9]{2}$</code>"</li>
+            <li>Identify 'BALANCE BROUGHT FORWARD'</li>
+          </ul>
+
+          <p>Here is the pseudocode expression of the algorithm:</p>
+
+          <pre>
+            <code>
+split pages into a list of pages;
+for each page{
+   get all text in the page;
+   for each line in the page{
+       if the line matches the start-regex key{
+           replace all commas with space
+           get carried forward balance amount 
+       }
+   }
+   if the page does not have any transaction data {
+      break loop;
+   }
+   remove all the lines after end-regex key
+   remove all the lines before start-regex key
+
+   for each line{
+      format date to DD-MMM-YY
+      combine broken lines that overflow to next line
+
+      if date is missing{
+         copy preceding date
+      }
+
+      add comma after each variable
+
+      if balance is missing{
+         calculate balance and assign to line
+      }
+    }
+
+    upload all the transactions in the page to the database
+ }
+            </code>
+          </pre>
+
+          <h2>Android App</h2>
+
+          <p>
+          The algorithm is implemented on Android Studio using Java. The app uses the standard Model View Controller architecture where activity classes act as controller. The app follows standard conventions where possible such as camelCase variables, class names and file names. The app also uses appropriate components to ensure efficiency such as Fragments for reusable portion of code and RecyclerViews for efficient listing. Finally, the app also uses the latest Material 3 design specifications. The following diagrams aim to visualise the architecture. 
+          </p>
+          <h2>Use Case</h2>
+
+          <img src="assets/img/spendingtracker/uml/umlusecase.png" alt="" style="width: 70%; ">
+
           <h2>Architecture</h2>
 
           <h4>Authentication</h4>
+          <img src="assets/img/spendingtracker/uml/uml-class-authentication.png" alt="" style="width: 50%; height: 40%;">
+          <img src="assets/img/spendingtracker/uml/sqdauthentication.png" alt="" style="width: 50%; ">
 
-          <h4>Authentication</h4>
+          <h4>Main Activity</h4>
+          <img src="assets/img/spendingtracker/uml/uml-class-main.png" alt="" style="width: 50%;">
 
+          <h4>File Upload</h4>
+          <img src="assets/img/spendingtracker/uml/uml-class-fileselector.png" alt="" style="width: 40%; ">
+          <img src="assets/img/spendingtracker/uml/sqdupload.png" alt="" style="width: 50%; height: 50%; ">
 
+          <h4>Dashboard</h4>
+          <img src="assets/img/spendingtracker/uml/uml-class-dashboard.png" alt="" style="width: 50%; ">
 
-        </div>
+          <h4>PDF Processing</h4>
+          <img src="assets/img/spendingtracker/uml/uml-class-pdfprocessing.png" alt="" style="width: 50%; ">
 
-        <div class="row gy-4  text-center">
+          <h4>Transaction Listing</h4>
+          <img src="assets/img/spendingtracker/uml/uml-class-transactions.png" alt="" style="width: 50%; ">
 
-          <div class="col-lg-12 ">
-
-            
-            <h2>Architecture Diagrams</h2>
-
-            <div class="portfolio-details-slider swiper">
-              <div class="swiper-wrapper align-items-center">
-
-                <div class="swiper-slide center">
-                  <a href="assets/img/use_case_diagram.png" data-gallery="portfolioGallery" class="portfolio-lightbox">
-                    <img src="assets/img/use_case_diagram.png" alt="" style="width: 100%; ">
-                  </a>
-                </div>
-
-                <div class="swiper-slide">
-                  <a href="assets/img/class_diagram.png" data-gallery="portfolioGallery" class="portfolio-lightbox">
-                    <img src="assets/img/class_diagram.png" alt="" style="width: 100%; ">
-                  </a>
-                </div>
-
-                <div class="swiper-slide">
-                  <a href="assets/img/sequence_diagram_authentication.png" data-gallery="portfolioGallery" class="portfolio-lightbox">
-                    <img src="assets/img/sequence_diagram_authentication.png" alt="" style="width: 50%; ">
-                  </a>
-                </div>
-
-                <div class="swiper-slide">
-                  <a href="assets/img/sequence_diagram_list.png" data-gallery="portfolioGallery" class="portfolio-lightbox">
-                    <img src="assets/img/sequence_diagram_list.png" alt="" style="width: 50%; ">
-                  </a>
-                </div>
-
-              </div>
-              <div class="swiper-pagination"></div>
-            </div>
-
-          </div>
-
-        </div>
-
-        
-
-        
-
-        <div class="row gy-4">
-          <div class="col-lg-8">
-
-            <pre><code>&lt;p&gt;Sample text here...&lt;/p&gt;
-              &lt;p&gt;And another line of sample text here...&lt;/p&gt;
-              </code></pre>
-
-          </div>
+          <h4>Analytics</h4>
+          <img src="assets/img/spendingtracker/uml/uml-class-analytics.png" alt="" style="width: 40%; ">
 
         </div>
 
