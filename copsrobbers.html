@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>DevFolio Bootstrap Portfolio Template - Portfolio Details</title>
+  <title>Portfolio Details</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -37,18 +37,18 @@
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center justify-content-between">
 
-      <h1 class="logo"><a href="index.html">DevFolio</a></h1>
+      <h1 class="logo"><a href="index.html">Portfolio</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto " href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <li><a class="nav-link scrollto" href="#services">Services</a></li>
-          <li><a class="nav-link scrollto " href="#work">Work</a></li>
-          <li><a class="nav-link scrollto " href="#blog">Blog</a></li>
-          <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+          <li><a class="nav-link scrollto " href="index.html">Home</a></li>
+          <li><a class="nav-link scrollto" href="index.html#about">About</a></li>
+          <li><a class="nav-link scrollto" href="index.html#skills">Skills</a></li>
+          <li><a class="nav-link scrollto " href="index.html#achievements">Achievements</a></li>
+          
+          <!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="#">Drop Down 1</a></li>
               <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
@@ -64,8 +64,8 @@
               <li><a href="#">Drop Down 3</a></li>
               <li><a href="#">Drop Down 4</a></li>
             </ul>
-          </li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          </li> -->
+          
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -78,12 +78,12 @@
     <div class="hero-content display-table">
       <div class="table-cell">
         <div class="container">
-          <h2 class="hero-title mb-4">Portfolio Details</h2>
+          <h2 class="hero-title mb-4">Cops and Robbers - Team Project</h2>
           <ol class="breadcrumb d-flex justify-content-center">
             <li class="breadcrumb-item">
-              <a href="#">Home</a>
+              <a href="index.html">Home</a>
             </li>
-            <li class="breadcrumb-item active">Portfolio Details</li>
+            <li class="breadcrumb-item active">Cops and Robbers</li>
           </ol>
         </div>
       </div>
@@ -103,16 +103,9 @@
               <div class="swiper-wrapper align-items-center">
 
                 <div class="swiper-slide">
-                  <img src="assets/img/portfolio-details-1.jpg" alt="">
+                  <img src="assets/img/MAP3.png" alt="">
                 </div>
 
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio-details-2.jpg" alt="">
-                </div>
-
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio-details-3.jpg" alt="">
-                </div>
 
               </div>
               <div class="swiper-pagination"></div>
@@ -123,24 +116,52 @@
             <div class="portfolio-info">
               <h3>Project information</h3>
               <ul>
-                <li><strong>Category</strong>: Web design</li>
-                <li><strong>Client</strong>: ASU Company</li>
-                <li><strong>Project date</strong>: 01 March, 2020</li>
-                <li><strong>Project URL</strong>: <a href="#">www.example.com</a></li>
+                <li><strong>Category</strong>: Unity Game</li>
+                <li><strong>Client</strong>: University Team Project</li>
+                <li><strong>Project date</strong>: 14 April, 2021</li>
+                <li><strong>Project URL</strong>: <a href="https://github.com/DerangedSenators/copsandrobbers">https://github.com/DerangedSenators/copsandrobbers</a></li>
               </ul>
             </div>
-            <div class="portfolio-description">
-              <h2>This is an example of portfolio detail</h2>
-              <p>
-                Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
-              </p>
-            </div>
+            
           </div>
 
         </div>
 
       </div>
     </section><!-- End Portfolio Details Section -->
+
+    <div class="container">
+      <div class="row">
+
+        <div class="portfolio-description">
+          <h2>Cops and Robbers online multiplayer game</h2>
+          <p>
+            Cops and Robbers game involves two teams of players (cops and robbers) and the goal is to grab as many bags of coins as possible around the top-down map. The players are also able to shoot opponents with a pistol or use batons to attack within a specific radius. All the sprites including weopens, characters and maps are hand drawn. In addition to this, the sound tracks, foley and animation were also custom made. 
+            The game was developed on Unity using C# and uses Mirror library for networking. 
+          </p>
+          
+          <h2>My Role in the Project</h2>
+          <ul>
+            <li>Developed the attack scripts such as baton attacks and gun shooting. The code I developed ensures the weopens stick to the character and moves based on mouse position. If the player equips baton and and clicks mouse within a certain radius, it causes damage to the opponent, and in turn reduces the health of opponent.</li>
+            <li>Developed the coin collection script. As any member of the team collects coins, the coins get added to the team's overall score. This score is visible to all players.  </li>
+            <li>Developed the game rounds and win condition. The game has multiple timed rounds, where the players get a break after each round. The game switches to a completely different map for each round, to add a bit of variety. After the last round, the code evaluates the scores and displays win or fail message depending on the player. </li>
+            <li>Developed the code to implement sound tracks and foley music based on events, and also the code to configure them based on the settings.</li>
+          </ul>
+          <h2>My Role in the Team</h2>
+          <ul>
+            <li>Used Excel skills to manage the logistics of the project and the team.  </li>
+            <ul>
+              <li>This includes tracking attendance and progress. </li>
+              <li>In addition to this, I ensured the team members were assigned to tasks with appropriate level of difficulty, by assessing thier strengths and weaknesses such as networking, gaming, art, animation, sound and website.</li>
+            </ul>
+            <li>Ensured the team had right versions of software and tools, such as Unity, GitKraken and other project cloud files. </li>
+            <li>Teach some GitHub and help with other areas such as website development.</li>
+          </ul>
+        
+        </div>
+
+      </div>
+    </div>
 
   </main><!-- End #main -->
 
