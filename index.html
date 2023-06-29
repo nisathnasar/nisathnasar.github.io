@@ -37,17 +37,18 @@
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center justify-content-between">
 
-      <h1 class="logo"><a href="index.html">Portfolio</a></h1>
+      <h1 class="logo"><a href="#hero">Portfolio</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
           <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <li><a class="nav-link scrollto" href="#skills">Skills</a></li>
-          <li><a class="nav-link scrollto " href="#work">Work</a></li>
-          <li><a class="nav-link scrollto " href="#achievements">Achievements</a></li>
+          <!-- <li><a class="nav-link scrollto" href="#skills">Skills</a></li> -->
+          <li><a class="nav-link scrollto " href="#work">Projects</a></li>
+          <li><a class="nav-link scrollto " href="#current">Current Activity</a></li>
+          <li><a class="nav-link scrollto " href="#experience">Experience</a></li>
+          <li><a class="nav-link scrollto " href="#grades">Grades</a></li>
 
           <li><a href="https://www.linkedin.com/in/nisath-m-nasar/" target="_blank"><img src="assets/img/LI-In-Bug.png" alt="" width="40px"></a></li>
 
@@ -167,6 +168,8 @@
         </div>
       </div>
     </section><!-- End About Section -->
+
+    
 
     <!-- ======= Services Section ======= -->
     <section id="skills" class="services-mf pt-5 route">
@@ -486,8 +489,67 @@
       </div>
     </section><!-- End Portfolio Section -->
 
+    <section id="current" class="portfolio-mf sect-pt5 route">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="title-box text-center">
+              <h3 class="title-a">
+                Current Activity
+              </h3>
+              <p class="subtitle-a">
+                Activities such as online courses or projects currently working on
+              </p>
 
-    <section class="sect-pt4 route">
+            </div>
+
+            
+          </div>
+        </div>
+
+        <div class="row">
+          
+
+          <div class="col-md-4">
+
+            <div class="card card-blog">
+              <div class="card-img">
+                <a href="assets/img/MS-Dyn-365-Finance-and-Operations-Square-White-Logo-v2.png" data-gallery="currActivityGallery" class="portfolio-lightbox"><img src="assets/img/MS-Dyn-365-Finance-and-Operations-Square-White-Logo-v2.png" alt="" class="img-fluid"></a>
+              </div>
+              <div class="card-body">
+                <div class="card-category-box">
+                  <div class="card-category">
+                    <h6 class="category">Online Course</h6>
+                  </div>
+                </div>
+                <h3 title="View Hackerrank profile"  class="card-title">Build Finance and Operations apps pathway</h3>
+
+                <p class="card-description">
+                  Undertaking this pathway as introduction to Dynamics 365 and to learn Finance & Operations app development using X++
+
+                  Check <b><a href="https://learn.microsoft.com/en-us/training/paths/build-finance-operations/" target="_blank">link to pathway</a></b>
+                </p>
+              </div>
+              
+              <div class="card-footer">
+                <div class="post-author">
+                  
+                </div>
+                <div class="post-date">
+                  <span class="bi bi-clock"></span> 2023
+                </div>
+              </div>
+            </div>
+          </div>
+
+          
+
+        </div>
+
+      </div>
+    </section>
+
+    <section id="experience" class="sect-pt4 route">
       <div class="container">
         <div class="row">
           <div class="col-sm-12">
@@ -567,6 +629,69 @@
       </div>
     </section>
 
+
+    <section id="grades" class="sect-pt4 route">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="title-box text-center">
+              <h3 class="title-a">
+                University Grades
+              </h3>
+              <p class="subtitle-a">
+                View modules studied and grades. Click on the images to get expanded view.
+              </p>
+              <div class="line-mf"></div>
+
+
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+
+
+
+
+            <div class="portfolio-details-slider swiper">
+              <div class="swiper-wrapper align-items-center">
+
+                <div class="swiper-slide center">
+                  <a href="assets/img/grades/first year trackbook.png" data-gallery="portfolioGallery" class="portfolio-lightbox">
+                    <img src="assets/img/grades/first year grades.png" alt="" style="width: 100%; ">
+                  </a>
+                </div>
+
+                <div class="swiper-slide">
+                  <a href="assets/img/grades/second year trackbook.png" data-gallery="portfolioGallery" class="portfolio-lightbox">
+                    <img src="assets/img/grades/second year grades.png" alt="" style="width: 100%; ">
+                  </a>
+                </div>
+
+                <div class="swiper-slide">
+                  <a href="assets/img/grades/third year trackbook.png" data-gallery="portfolioGallery" class="portfolio-lightbox">
+                    <img src="assets/img/grades/third year grades.png" alt="" style="width: 100%; ">
+                  </a>
+                </div>
+
+                <div class="swiper-slide">
+                  <a href="assets/img/grades/final year trackbook.png" data-gallery="portfolioGallery" class="portfolio-lightbox">
+                    <img src="assets/img/grades/final year grades.png" alt="" style="width: 100%; ">
+                  </a>
+                </div>
+
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+
+
+
+        </div>
+
+        
+      </div>
+    </section>
 
 
     <section id="achievements" class="sect-pt4 route">
@@ -913,68 +1038,7 @@
 
     </section>
 
-    <section>
-      <div class="container">
-
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="title-box text-center">
-              <h3 class="title-a">
-                University Grades
-              </h3>
-              <p class="subtitle-a">
-                View modules studied and grades. 
-              </p>
-              <div class="line-mf"></div>
-
-
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-
-
-
-
-            <div class="portfolio-details-slider swiper">
-              <div class="swiper-wrapper align-items-center">
-
-                <div class="swiper-slide center">
-                  <a href="assets/img/grades/first year trackbook.png" data-gallery="portfolioGallery" class="portfolio-lightbox">
-                    <img src="assets/img/grades/first year grades.png" alt="" style="width: 100%; ">
-                  </a>
-                </div>
-
-                <div class="swiper-slide">
-                  <a href="assets/img/grades/second year trackbook.png" data-gallery="portfolioGallery" class="portfolio-lightbox">
-                    <img src="assets/img/grades/second year grades.png" alt="" style="width: 100%; ">
-                  </a>
-                </div>
-
-                <div class="swiper-slide">
-                  <a href="assets/img/grades/third year trackbook.png" data-gallery="portfolioGallery" class="portfolio-lightbox">
-                    <img src="assets/img/grades/third year grades.png" alt="" style="width: 100%; ">
-                  </a>
-                </div>
-
-                <div class="swiper-slide">
-                  <a href="assets/img/grades/final year trackbook.png" data-gallery="portfolioGallery" class="portfolio-lightbox">
-                    <img src="assets/img/grades/final year grades.png" alt="" style="width: 100%; ">
-                  </a>
-                </div>
-
-              </div>
-              <div class="swiper-pagination"></div>
-            </div>
-
-
-
-        </div>
-
-        
-      </div>
-    </section>
+    
 
     <!-- ======= Blog Section ======= -->
 
